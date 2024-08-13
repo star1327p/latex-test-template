@@ -1,0 +1,15 @@
+## Latex related auxiliary files
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.log
+**/*.synctex.gz
+
+## RStudio related auxiliary files
+**/.Rproj.user
+**/.Rhistory
+**/.RData
+**/.Ruserdata
+
+## Miscellaneous
+nohup*
