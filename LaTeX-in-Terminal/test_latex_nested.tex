@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[scale=0.85, footskip=0.8cm]{geometry} % Reduce document margins
+\setlength{\parindent}{0pt}%
+\addtolength{\parskip}{\baselineskip}
+
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{amsmath, xparse}
+\usepackage{url}
+
+\title{LaTeX in Terminal with Makefile}
+\author{Christine Chai}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Intro}
+
+Since compiling a LaTeX document involves multiple commands, let's create a \texttt{Makefile} to simplify the process. In the terminal, we just go to the file directory and type \texttt{make} to build the \texttt{.tex} file into the PDF. 
+
+\section{Literature Review}
+
+This is a citation~\cite{stamatatos2011plagiarism}.
+
+Another citation~\cite{sanchez2019paraphrase}.
+
+
+\section{Math Examples}
+
+$\hat{cov[x,y]}$
+
+$$c = \sqrt{a^2 + b^2}$$
+
+\(\mathbf{\emptyset_0} =\begin{bmatrix}0,1,0\end{bmatrix}\)
+
+$\begin{bmatrix} 1 & x_{11} & x_{12}\\ 1 & x_{21} & x_{22} \\ 1 & x_{31} & x_{32} \end{bmatrix}$
+
+\bibliography{Ref_Directory/test-refs-nested}
+\bibliographystyle{apalike}
+
+
+\end{document}
