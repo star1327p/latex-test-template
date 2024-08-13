@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[scale=0.85, footskip=0.8cm]{geometry} % Reduce document margins
+\setlength{\parindent}{0pt}%
+\addtolength{\parskip}{\baselineskip}
+
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{amsmath, xparse}
+\usepackage{url}
+
+\title{Using LaTeX in RStudio}
+\author{Christine Chai}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Intro}
+
+There are multiple ways to compile a LaTeX document in RStudio.
+
+\subsection{Compile within RStudio IDE}
+
+In RStudio, it is possible to use the ``Compile PDF'' button to compile a \texttt{.tex} file. As long as you create or open a \texttt{.tex} file in RStudio, this ``Compile PDF'' button will automatically appear below your file tab. The \texttt{.tex} file will also be syntax-highlighted, making the code easier to read and debug.
+
+However, this method generates many unwanted auxiliary files, including \texttt{.bbl}, \texttt{.log}, and \texttt{.synctex.gz}. We have to set these in \texttt{.gitignore}, and/or manually remove these intermediate files. Be careful not to remove the final PDF you created.
+
+How to change the RStudio settings to automatically remove these auxiliary files:
+
+\begin{enumerate}
+\item Tools $\rightarrow$ Global Options $\rightarrow$ Sweave
+\item Open: LaTeX Editing and Compilation
+\item Check the box: Use tinytex when compiling .tex files
+\item Check the box: Clean auxiliary output after compile
+\end{enumerate}
+
+
+\subsection{Compile using R Console}
+
+Alternatively, you may also use the R Console to compile a \texttt{.tex} file into a PDF. In the $\mathsf{R}$ package \texttt{tools}, just use the \texttt{texi2pdf} (pronounced as tex-i2-pdf) command and set \texttt{clean=TRUE}. In this way, the auxiliary files are automatically removed. We keep only the \texttt{.tex} and PDF in the system.
+
+\begin{verbatim}
+library(tools)
+texi2pdf("Test-R-Compile-PDF.tex", clean=TRUE)
+\end{verbatim}
+
+\section{Math Equations}
+
+\(\mathbf{\emptyset_0} =\begin{bmatrix}0,1,0\end{bmatrix}\)
+
+This is a $2 \times 2$ matrix: $\begin{bmatrix} x_{11} & x_{12}\\ x_{21} & x_{22} \end{bmatrix}$
+
+\section{Discussion}
+
+It is recommended to put the references \texttt{.bib} file in the same directory as your \texttt{.tex} file. But since RStudio is an IDE, you may also put the references \texttt{.bib} file in a separate folder and specify the path to it. It is preferrable to specify a relative path from the source directory, rather than an absolute path.
+
+Although RStudio regards \texttt{.bib} files as regular text files by default, you may change the typesetting from ``Text file'' to ``TeX'' to turn on syntax highlighting. The typesetting button is located at the lower-right of your source code window in RStudio.
+
+Test citation~\cite{chai-2023-rss-climate}
+
+Second citation~\cite{wilkinson2013grammar}
+
+
+\bibliography{Test_Folder/Test-R-Compile-Ref}
+\bibliographystyle{plain}
+
+
+\end{document}
