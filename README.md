@@ -1,5 +1,4 @@
-# latex-test-template
-LaTeX Templates for RStudio, Jupyter, and Linux Terminal  
+# LaTeX Templates for RStudio, Jupyter, and Linux Terminal  
 
 Resource Links:
 
@@ -8,3 +7,20 @@ Resource Links:
 - [Why Should I Use LaTeX over Word for Writing My Research? | Orvium](https://blog.orvium.io/latex-over-word/)
 
 - [Why I Transitioned from Microsoft Word to LaTeX | by Michael R. Apostol | Blank Page | Medium](https://medium.com/blankpage/why-i-transitioned-from-microsoft-word-to-latex-7b9392705167)
+
+# How to use the latex-test-template as a submodule
+
+In your git repo, use this command in the terminal: 
+`git submodule add https://github.com/star1327p/latex-test-template.git`
+
+The `.gitmodules` file will be auto-generated in your repo, and you need to add the last three lines:
+```
+[submodule "latex-test-template"]
+	path = latex-test-template
+	url = https://github.com/star1327p/latex-test-template.git
+	update = merge
+	branch = main
+	recursive = true
+```
+Then commit and push these changes to your repo. You will see the directory `latex-test-template @ [commit hash]` added as a shortcut to your git repo.
+
