@@ -1,6 +1,6 @@
-## LaTeX Templates for RStudio, Jupyter, and Linux Terminal  
+## LaTeX Templates for RStudio, Jupyter Notebook, and Linux Terminal  
 
-We created a few templates to demonstrate how to write LaTeX directly within RStudio, Jupyter, or Linux terminal. Some computing servers have these tools, but do not allow [Overleaf](https://www.overleaf.com/) (online LaTeX editor) or other LaTeX IDE installations.
+We created a few templates to demonstrate how to write LaTeX directly within RStudio, Jupyter Notebook, or Linux terminal. Some computing servers have these tools, but do not allow [Overleaf](https://www.overleaf.com/) (online LaTeX editor) or other LaTeX IDE installations.
 
 Resource Links:
 
